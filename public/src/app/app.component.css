@@ -1,0 +1,27 @@
+#tupac{
+    height: 500px;
+}
+.root{
+    border: black solid 1px;
+}
+#mainAdd{
+    display:inline-block;
+    width:200px;
+}
+#allCakes{
+    overflow-y: scroll;
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+    height: 300px;
+}
+#allCakesRight, #allCakesLeft{
+    display: inline-block;
+    width: 49%;
+}
+img{
+    max-width: 200px;
+}
+.cake{
+    border: black solid 1px;
+}

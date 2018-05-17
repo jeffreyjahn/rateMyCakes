@@ -1,0 +1,43 @@
+<div id="tupac">
+  <h1>Rate My Cakes</h1>
+  <div id="mainAdd">
+    <h3>Submit a cake to be rated</h3>
+    <form (submit)="newCakeSubmit()">
+      <table>
+        <tr><td><p>Baker name:</p></td></tr>
+        <tr><td><input type="text" name="newCake.baker" [(ngModel)]="newCake.baker"></td></tr>
+        <tr><td><p>Image url:</p></td></tr>
+        <tr><td><input type="text" name="newCake.image" [(ngModel)]="newCake.image"></td></tr>
+        <tr><td><input type="submit" value="Add Cake!"></td></tr>
+      </table>
+    </form>
+  </div>
+  <div id="allCakes">
+    <div class="cake" *ngFor="let cake of allCakes">
+      <div id="allCakesLeft">
+        <a (click)="getSpecificCake(cake)"><img src="{{cake.image}}" alt="nuu"></a>
+      </div>
+      <div id="allCakesRight">
+        <form (submit)="newRatingSubmit(cake)">
+          <!-- rating -->
+          <table>
+            <tr><td><select name="newRate.rate" [(ngModel)]="newRate.rate">
+              <option value="5">5 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="2">2 Stars</option>
+              <option value="1">1 Stars</option>
+              <option value="0">0 Stars</option>
+            </select></td></tr>
+            <tr><td><textarea name="newRate.comment" [(ngModel)]="newRate.comment" cols="30" rows="10" placeholder="Type your comment here!"></textarea></td></tr>
+            <tr><td><input type="submit" value="Add Comment!"></td></tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="root">
+  <app-details [cakeToShow]='cakeToShow' [shownCakeRating]='shownCakeRating'></app-details>
+</div>
